@@ -14,3 +14,7 @@ go build -ldflags "-X 'github.com/viert/kstore/manager.clientID=$CLIENT_ID' -X '
 At start kstore will ask you to type in your master password. Then it will try to load and decrypt (with AES key based on your password) yandex credentials file. If the program is running for the first time and there's no credentials file, kstore will generate a link to Yandex OAuth following which you give it permissions it needs and get a confirmation code. Once confirmation code is typed into kstore, the program will create an encrypted credentials file for you and use it the next time you start kstore.
 
 Important note: all the data starting from credentials file to the actual passwords database is encrypted with your master password. In case of losing it you will not be able to restore your data. The credentials file is important but it's quite safe to delete it. It will be generated upon next start using the previously mentioned OAuth "handshake".
+
+#### Note on yanpassword
+
+Yanpassword is the previous version of kstore and kstore effectively uses a big part of Yanpassword's codebase. The main difference between them is the Yandex.Disk API they use. Webdav API used in yanpassword is deprecated for a while so kstore uses REST API which is also claimed to be more stable.
