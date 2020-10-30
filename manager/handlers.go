@@ -9,7 +9,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/viert/yanpassword/term"
+	"github.com/viert/kstore/term"
 )
 
 func (m *Manager) setupHandlers() {
